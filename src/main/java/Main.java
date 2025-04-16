@@ -6,15 +6,24 @@ public class Main {
         Glass firstPartGlass = new Glass("Армированное");
         Glass secondPartGlass = new Glass("Сталинит");
 
+        Paper firstPartPaper = new Paper("Газетная бумага");
+
         Box<Plastic> boxForPlastic = new Box<>();
         boxForPlastic.putItem(firstPartPlastic);
         boxForPlastic.putItem(secondPartPlastic);
-        System.out.println("Первая партия мусора: " + boxForPlastic.getItem().display());
+        boxForPlastic.getItem().display();
 
         Box<Glass> boxForGlass = new Box<>();
         boxForGlass.putItem(firstPartGlass);
         boxForGlass.putItem(secondPartGlass);
-        System.out.println("Вторая партия мусора: " + boxForGlass.getItem().display());
+        boxForGlass.getItem().display();
 
+        Box<Paper> boxForPaper = new Box<>();
+        boxForPaper.putItem(firstPartPaper);
+        boxForPaper.getItem().display();
+
+        TwoCellsBox<Plastic, Glass> boxForPlasticAndGlass = new TwoCellsBox<>();
+        boxForPlasticAndGlass.putItems(firstPartPlastic, firstPartGlass);
+        boxForPlasticAndGlass.getItems();
     }
 }
